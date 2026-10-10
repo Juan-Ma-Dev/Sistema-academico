@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Académica - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="dash-header">
+        <hgroup class="header-brand">
+            <span class="logo-text">INSTITUCIÓN</span>
+            <span class="badge">Panel Docente</span>
+        </hgroup>
+
+        <nav class="user-menu" aria-label="Menú de Usuario">
+            <span class="user-name">Prof. Carlos Rodríguez</span>
+            <a href="sisacadelogin.html" class="logout-btn">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="dash-container">
+
+        <section class="filter-card">
+            <h2>Seleccionar Grupo</h2>
+            <form class="filter-form">
+                <div class="filter-group">
+                    <label for="curso">Curso / Grado</label>
+                    <select id="curso" name="curso">
+                        <option value="10a">10° A - Bachillerato</option>
+                        <option value="10b">10° B - Bachillerato</option>
+                        <option value="11a">11° A - Bachillerato</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="asignatura">Asignatura</label>
+                    <select id="asignatura" name="asignatura">
+                        <option value="matematicas">Matemáticas</option>
+                        <option value="fisica">Física</option>
+                        <option value="quimica">Química</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="periodo">Periodo Lectivo</label>
+                    <select id="periodo" name="periodo">
+                        <option value="p1">Primer Periodo</option>
+                        <option value="p2">Segundo Periodo</option>
+                        <option value="p3">Tercer Periodo</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <div class="modules-grid">
+
+            <section class="module-card">
+                <header class="module-header">
+                    <div>
+                        <h3>Gestión de Calificaciones</h3>
+                        <p class="subtitle">Ingreso y edición de notas parciales</p>
+                    </div>
+                    <button type="button" class="btn-primary">Guardar Notas</button>
+                </header>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Estudiante</th>
+                                <th>Nota 1 (30%)</th>
+                                <th>Nota 2 (30%)</th>
+                                <th>Examen (40%)</th>
+                                <th>Definitiva</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>202601</td>
+                                <td>Álvarez Gómez, María</td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="4.5" class="grade-input">
+                                </td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="4.0" class="grade-input">
+                                </td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="4.8" class="grade-input">
+                                </td>
+                                <td><strong class="grade-pass">4.5</strong></td>
+                            </tr>
+                            <tr>
+                                <td>202602</td>
+                                <td>Benítez Ruiz, Juan</td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="3.0" class="grade-input">
+                                </td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="2.5" class="grade-input">
+                                </td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="3.2" class="grade-input">
+                                </td>
+                                <td><strong class="grade-warn">2.9</strong></td>
+                            </tr>
+                            <tr>
+                                <td>202603</td>
+                                <td>Castro López, Sofía</td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="5.0" class="grade-input">
+                                </td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="4.7" class="grade-input">
+                                </td>
+                                <td><input type="number" step="0.1" min="0" max="5" value="4.9" class="grade-input">
+                                </td>
+                                <td><strong class="grade-pass">4.9</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="module-card">
+                <header class="module-header">
+                    <div>
+                        <h3>Control de Asistencia</h3>
+                        <p class="subtitle">Registro diario de asistencia</p>
+                    </div>
+                    <div class="header-actions">
+                        <input type="date" value="2026-10-09" class="date-input">
+                        <button type="button" class="btn-primary">Guardar Asistencia</button>
+                    </div>
+                </header>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Estudiante</th>
+                                <th>Estado de Asistencia</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>202601</td>
+                                <td>Álvarez Gómez, María</td>
+                                <td>
+                                    <select class="status-select status-present">
+                                        <option value="p" selected>Presente</option>
+                                        <option value="a">Ausente</option>
+                                        <option value="t">Tardanza</option>
+                                        <option value="j">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" placeholder="Añadir nota..." class="obs-input"></td>
+                            </tr>
+                            <tr>
+                                <td>202602</td>
+                                <td>Benítez Ruiz, Juan</td>
+                                <td>
+                                    <select class="status-select status-absent">
+                                        <option value="p">Presente</option>
+                                        <option value="a" selected>Ausente</option>
+                                        <option value="t">Tardanza</option>
+                                        <option value="j">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" placeholder="Sin excusa médica" value="Sin excusa médica"
+                                        class="obs-input"></td>
+                            </tr>
+                            <tr>
+                                <td>202603</td>
+                                <td>Castro López, Sofía</td>
+                                <td>
+                                    <select class="status-select status-late">
+                                        <option value="p">Presente</option>
+                                        <option value="a">Ausente</option>
+                                        <option value="t" selected>Tardanza</option>
+                                        <option value="j">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" placeholder="Llegó 10 min tarde" value="Llegó 10 min tarde"
+                                        class="obs-input"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
